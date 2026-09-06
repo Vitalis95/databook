@@ -2620,12 +2620,7 @@ DataBook <- R6::R6Class("DataBook",
                             factor_data_frame_name <- make.names(factor_data_frame_name)
                             factor_data_frame_name <- instatExtras::next_default_item(factor_data_frame_name, self$get_data_names(), include_index = FALSE)
                             factor_column <- curr_data_obj$get_columns_from_data(factor)
-                            factor_data_frame <- data.frame(
-                              factor = factor(
-                                levels(factor_column),
-                                levels = levels(factor_column)
-                              )
-                            )
+                            factor_data_frame <- data.frame(factor = factor(levels(factor_column),levels = levels(factor_column)) )
                             names(factor_data_frame) <- factor
                             if(include_contrasts) factor_data_frame <- cbind(factor_data_frame, contrasts(factor_column))
                             if(summary_count) {
