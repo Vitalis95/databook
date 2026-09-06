@@ -2633,7 +2633,6 @@ DataBook <- R6::R6Class("DataBook",
                                 as.integer(factor_column),
                                 nbins = nlevels(factor_column)
                               )
-                              
                               factor_data_frame <- cbind(
                                 factor_data_frame,
                                 Frequencies = frequencies
